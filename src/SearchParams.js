@@ -15,7 +15,6 @@ const SearchParams = () => {
    */
   const [location, setLocation] = useState("Vicente Lopez");
 
-  // const location = 'Vicente Lopez';
 
   return (
     <div className="search-params">
