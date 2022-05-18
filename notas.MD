@@ -56,3 +56,31 @@ Y esto haria que se ejecute el requestPets y setPets en modo indefinido.
 useEffect( () => {
 
 }, []);
+
+
+
+Hay algunos hooks existentes en React
+
+useState()
+useEffect()
+useReducer()
+useRefs()
+useContext()
+
+pero nosotros podemos crear nuestros hooks, para hacer algo re utilizable.
+
+Necesitamos hacer una lista de breeds (razas) del animal seleccionado. 
+
+custom hook useBreedList.js
+
+
+El componente SearchParams se esta haciendo muy grande y haciendo mucho trabajo.
+Esto es contra los principios de react, en general React pide componentes pequenos
+y componentes que hace solo una cosa. 
+En realidad hay dos razones por las cuales queremos dividir un componente en pequenas
+partes, 1- para hacer re utilizable 2- para estar con el codigo mas organizado
+De esta manera podemos mantener el codigo del componente mas facil (ej. cambios del codigo, 
+tests, utilizacion).
+
+
+

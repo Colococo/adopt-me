@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Pet from "./Pet";
 import SearchParams from "./SearchParams";
+import SearchParams2 from "./SearchParams2";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       < name="Pepper" animal="Bird" breed="Cockatiel"/>
       <Pet name="Doink" animal="Cat" breed="Mix"/> */}
       <SearchParams />
+      {/* <SearchParams2 /> */}
     </div>
   );
 };

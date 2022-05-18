@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import Pet from "./Pet";
+import useBreedList from "./useBreedList";
+
+import Results from './Results';
 
 const SearchParams = () => {
   /**
@@ -10,18 +12,16 @@ const SearchParams = () => {
    *
    * usamos la funcion setLocation el atributo onChange del INPUT, cada vez que escribimos en el input
    * va a llamar a la funcion setLocation con lo que estamos escribiendo.
-   * Cuando la funcion setLocaion es llamada, REACT sabe que su esetado fue modificado y lanza otro ciclo de renderizacion.
-   *
-   *
+   * Cuando la funcion setLocation es llamada, REACT sabe que su esetado fue modificado y lanza otro ciclo de renderizacion.
    */
 
   const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
-
+ //retorna 2 arreglos, location: valor actual, setLocation: funcion(linea 52)
   const [location, setLocation] = useState("Vicente Lopez");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
 
-  const breeds = [];
+  const [breeds] = useBreedList(animal);
 
   const [pets, setPets] = useState([]);
 
@@ -33,7 +33,7 @@ const SearchParams = () => {
     // fetch permite llamar APIs para obtener datos
     //
     const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets`
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
   //?animal=${animal}&location=${location}&breed=${breed}
     // json = JavaScript Object Notation
@@ -43,15 +43,19 @@ const SearchParams = () => {
   }
 
   return (
+     
     <div className="search-params">
-      <form>
+      <form onSubmit={ e => {
+        e.preventDefault();
+        requestPets();
+      }}>
         <label htmlFor="location">
           Location
           <input
             id="location"
             value={location}
             placeholder="Location"
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={(e) => setLocation(e.target.value)}//toma el valor que ingresamos
           />
         </label>
 
@@ -78,6 +82,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
+
         <label htmlFor="breed">
           Breed
           <select
@@ -102,15 +107,17 @@ const SearchParams = () => {
 
         <button>Submit</button>
       </form>
+      
+      <Results pets={pets} />
 
-      {pets.map((pet) => (
+      {/* {pets.map((pet) => (
         <Pet
           name={pet.name}
           animal={pet.animal}
           breed={pet.breed}
           key={pet.id}
         />
-      ))}
+      ))} */}
     </div>
   );
 };
