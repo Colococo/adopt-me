@@ -83,4 +83,11 @@ De esta manera podemos mantener el codigo del componente mas facil (ej. cambios 
 tests, utilizacion).
 
 
+React Router
+
+navega a http://localhost:1234 y despues a http://localhost:1234/details/1, y 
+ambos funcionan.
+
+La parte :id es variable, http://localhost/3, 3 seria variable.
+
 

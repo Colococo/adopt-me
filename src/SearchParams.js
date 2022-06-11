@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useBreedList from "./useBreedList";
 
-import Results from './Results';
+import Results from "./Results";
 
 const SearchParams = () => {
   /**
@@ -12,12 +12,12 @@ const SearchParams = () => {
    *
    * usamos la funcion setLocation el atributo onChange del INPUT, cada vez que escribimos en el input
    * va a llamar a la funcion setLocation con lo que estamos escribiendo.
-   * Cuando la funcion setLocation es llamada, REACT sabe que su esetado fue modificado y lanza otro ciclo de renderizacion.
+   * Cuando la funcion setLocation es llamada, REACT sabe que su estado fue modificado y lanza otro ciclo de renderizacion.
    */
 
   const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
- //retorna 2 arreglos, location: valor actual, setLocation: funcion(linea 52)
-  const [location, setLocation] = useState("Vicente Lopez");
+  //retorna 2 arreglos, location: valor actual, setLocation: funcion(linea 52)
+  const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
 
@@ -35,7 +35,7 @@ const SearchParams = () => {
     const res = await fetch(
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
-  //?animal=${animal}&location=${location}&breed=${breed}
+    //?animal=${animal}&location=${location}&breed=${breed}
     // json = JavaScript Object Notation
     const json = await res.json();
 
@@ -43,19 +43,20 @@ const SearchParams = () => {
   }
 
   return (
-     
     <div className="search-params">
-      <form onSubmit={ e => {
-        e.preventDefault();
-        requestPets();
-      }}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
             id="location"
             value={location}
             placeholder="Location"
-            onChange={(e) => setLocation(e.target.value)}//toma el valor que ingresamos
+            onChange={(e) => setLocation(e.target.value)} //toma el valor que ingresamos
           />
         </label>
 
@@ -107,7 +108,7 @@ const SearchParams = () => {
 
         <button>Submit</button>
       </form>
-      
+
       <Results pets={pets} />
 
       {/* {pets.map((pet) => (
