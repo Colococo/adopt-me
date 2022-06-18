@@ -6,17 +6,15 @@ import SearchParams from "./SearchParams";
 
 const App = () => {
   return (
-   
     <BrowserRouter>
       <div>
-        <Link to='/'>Adpot me!</Link>
+        <Link to="/">Adpot me!</Link>
         <Routes>
           <Route path="/details/:id" element={<Details />} />
           <Route path="/" element={<SearchParams />} />
         </Routes>
       </div>
     </BrowserRouter>
-   
   );
 };
 
