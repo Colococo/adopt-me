@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useBreedList from "./useBreedList";
 
 import Results from "./Results";
-
+// SearchParams: es el formulario
 const SearchParams = () => {
   /**
    * useState = HOOK
