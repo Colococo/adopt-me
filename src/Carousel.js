@@ -1,5 +1,8 @@
 import { Component } from "react";
-
+// Carousel: son las imagenes de cada animal
+/**
+ * componente carusel contiene las imagenes
+ */
 class Carousel extends Component {
   state = {
     active: 0,

@@ -1,5 +1,9 @@
 import Pet from "./Pet";
-
+/**
+ *  lo usa el formulario para obtener los valores de los animales
+ * @param {*} pets: Lista de animales 
+ * @returns JSX con la lista de animales
+ */
 const Results = ({ pets }) => {
   return (
     <div className="search">
