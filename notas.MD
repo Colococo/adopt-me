@@ -96,3 +96,4 @@ javascript moderno, con el plugin plugin-proposal-class-properties lo incluimos 
 Por lo siguente; la ventaja es que se puede leer mas facilmente
 
 state = {loading: true}
+
