@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 /**
  * agrego desde repo github
  * agrego desde repo github 2
+ * agrego desde local VSC 2
  * Component Pet
  * @param { name, animal, breed, images, location, id} props 
  * @returns JSX de Pet
