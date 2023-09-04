@@ -2,6 +2,7 @@ import { Component } from "react";
 // Carousel: son las imagenes de cada animal
 /**
  * componente carusel contiene las imagenes
+  * agrego linea desde repo github
  * agrego linea desde local VSC
  */
 class Carousel extends Component {
