@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 // Pet: info de los animales: name, animal, breed, images, location, id
 
 /**
+ * agrego desde repo github
  * Component Pet
  * @param { name, animal, breed, images, location, id} props 
  * @returns JSX de Pet
