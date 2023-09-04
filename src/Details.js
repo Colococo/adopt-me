@@ -5,7 +5,11 @@ import Carousel from "./Carousel";
 
 /**
  * Details: detalle del animal seleccionado
+<<<<<<< HEAD
  * agrego linea desde el local VSC
+=======
+ * agrego linea desde el repo github
+>>>>>>> 822a13d435ce3d5a499ba05ea754704e7c99bd8c
  */
 class Details extends Component {
   state = { loading: true };
