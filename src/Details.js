@@ -5,6 +5,7 @@ import Carousel from "./Carousel";
 
 /**
  * Details: detalle del animal seleccionado
+ * agrego linea desde el local VSC
  */
 class Details extends Component {
   state = { loading: true };
