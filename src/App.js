@@ -5,6 +5,7 @@ import Details from "./Details";
 import SearchParams from "./SearchParams";
 
 const App = () => {
+  // linea agregada desde el local VSC
   return (
     <BrowserRouter>
       <div>
